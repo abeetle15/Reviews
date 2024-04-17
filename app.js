@@ -1,5 +1,5 @@
 // create consts for every element that needs to change
-const name = document.querySelector('#name');
+const nameDisplay = document.querySelector('#name');
 const photo = document.querySelector('#photo');
 const job = document.querySelector('#job');
 const reviewText = document.querySelector('#review-text');
@@ -48,7 +48,7 @@ const boyReviews = [
   {
     id: 6,
     name: 'Charlie',
-    photo: 'images/charlie-pic.jpeg',
+    photo: 'images/charlie-pic.jpg',
     job: `Tech entrepreneur`,
     review: `Nice guy who turned into a villain after being acused of being a wimp (correctly). Sad.`,
   },
@@ -57,15 +57,23 @@ const boyReviews = [
     name: 'Tad',
     photo: 'images/tad-pic.jpeg',
     job: `College professor`,
-    review: `Sensitive father. Gay. Will marry you and give you several wonderful years before coming out. `,
+    review: `Sensitive father. Gay. Will marry you and give you several wonderful years together before coming out.`,
   },
 
 ];
 
-// create a currentBoy variable = 0
+// create a function that displays every characteristic in the corresponding space for each object in the boyArray using currentBoyIndex
+let currentBoyIndex = 0;
 
-// create a function that displays every characteristic in the corresponding space for each object in the boyArray using currentBoy
+function showBoy() {
+  let currentBoy = boyReviews[currentBoyIndex];
+  nameDisplay.textContent = currentBoy.name;
+  photo.src = currentBoy.photo;
+  job.textContent = currentBoy.job;
+  reviewText.textContent = currentBoy.review;
+};
 
+showBoy(currentBoyIndex);
 // add event listener to make arrow buttons to cycle through the boys
 
 // make the show me my husband btn display a random boy
